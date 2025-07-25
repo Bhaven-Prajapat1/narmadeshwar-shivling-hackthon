@@ -21,6 +21,13 @@ body {
   height: auto;
   overflow: hidden;
 }
+html,
+body,
+#root {
+  background-color: #000000; /* match SplashScreen background */
+  margin: 0;
+  padding: 0;
+}
 
 
 

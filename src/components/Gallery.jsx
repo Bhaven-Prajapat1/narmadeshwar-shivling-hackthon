@@ -67,7 +67,6 @@ const Gallery = () => {
 
   const { height } = dimension;
 
-  // Slightly adjusted scroll factor multipliers for a smoother, more balanced scroll effect across devices
   const y = useTransform(scrollYProgress, [0, 1], [0, height * 1.8]);
   const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 2.5]);
   const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.1]);
@@ -101,10 +100,8 @@ const Gallery = () => {
 
   return (
     <main className="min-h-screen bg-black">
-      {/* Top Spacer */}
       <div className="h-40"></div>
 
-      {/* Gallery Section */}
       <div
         ref={gallery}
         className="w-full relative bg-black min-h-[420vh] overflow-hidden"
@@ -125,18 +122,50 @@ const Gallery = () => {
           <Column images={[images[0], images[1], images[2]]} y={y} />
           <Column images={[images[3], images[4], images[5]]} y={y2} />
           <Column images={[images[6], images[7], images[8]]} y={y3} />
-          <Column images={[images[9], images[10], images[11]]} y={y4} />
         </div>
       </div>
 
-      <div className="h-40 text-gray-500 text-center text-xl">
-        <small>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-          maxime voluptatem, pariatur harum tempora ad quia optio dolore quasi
-          maxime voluptatem, pariatur harum tempora ad quia optio dolore quasi
-          sit!
-        </small>
-      </div>
+      {/* Reviews Section */}
+      <motion.div
+        className="px-4 py-16 text-gray-100 text-center"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">What Our Devotees Say</h2>
+        <div className="max-w-3xl mx-auto space-y-6">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="bg-gray-800 p-4 rounded-xl shadow-md"
+          >
+            "I felt a divine energy the moment the Narmadeshwar Shivling arrived. Truly sacred."
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="bg-gray-800 p-4 rounded-xl shadow-md"
+          >
+            "Authentic and powerful. The packaging and energy was beyond expectations."
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            viewport={{ once: true }}
+            className="bg-gray-800 p-4 rounded-xl shadow-md"
+          >
+            "Blessed to have this Shivling in my pooja room. A must for all Shiva bhakts."
+          </motion.p>
+        </div>
+      </motion.div>
     </main>
   );
 };

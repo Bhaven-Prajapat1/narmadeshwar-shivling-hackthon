@@ -1,13 +1,17 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import Footer from "./components/Footer";
-import Gallery from "./components/Gallery";
-import JyotirlingaMarquee from "./components/JyotirlingaMarquee";
-import LandingPage from "./components/LandingPage";
-import Navbar from "./components/NavBar";
-import ScrollContainer from "./components/ScrollContainer";
-import TestimonialSection from "./components/TestimonialSection";
-const lines = ["Welcome to", "Sacred", "Narmadeshwar Shivling"];
+import { lazy, Suspense, useEffect, useState } from "react";
+
+const Navbar = lazy(() => import("./components/NavBar"));
+const LandingPage = lazy(() => import("./components/LandingPage"));
+const Gallery = lazy(() => import("./components/Gallery"));
+const JyotirlingaMarquee = lazy(() =>
+  import("./components/JyotirlingaMarquee")
+);
+const TestimonialSection = lazy(() =>
+  import("./components/TestimonialSection")
+);
+const Footer = lazy(() => import("./components/Footer"));
+const lines = ["Original", "Narmadeshwar Shivling"];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -65,12 +69,7 @@ const SplashScreen = () => (
   >
     {/* Background Image */}
     <motion.div variants={backgroundVariants} className="absolute inset-0 z-0">
-      <div
-        className="w-full h-full bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('https://i.pinimg.com/1200x/41/ff/8f/41ff8fee4a9a90f834e2dcfb9d2e1148.jpg')`,
-        }}
-      />
+      <div className="w-full h-full bg-cover bg-center bg-no-repeat" />
       {/* Dark overlay for better text readability */}
       <motion.div
         variants={overlayVariants}
@@ -169,12 +168,11 @@ const SplashScreen = () => (
     />
   </motion.div>
 );
-
 function App() {
   const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowSplash(false), 3500); // Extended for better experience
+    const timer = setTimeout(() => setShowSplash(false), 3500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -200,12 +198,18 @@ function App() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="w-full min-h-screen bg-gray-950"
         >
+          <Suspense
+            fallback={
+              <div className="text-white text-center mt-20">Loading...</div>
+            }
+          >
             <Navbar />
             <LandingPage />
             <Gallery />
             <JyotirlingaMarquee />
             <TestimonialSection />
             <Footer />
+          </Suspense>
         </motion.div>
       )}
     </div>

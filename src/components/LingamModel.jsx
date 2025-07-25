@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+
 const LingamModel = () => {
   const containerVariants = {
     initial: { opacity: 0, scale: 0.8 },

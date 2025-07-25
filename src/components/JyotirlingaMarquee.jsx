@@ -4,65 +4,55 @@ import Marquee from "react-fast-marquee";
 // Shivlings list (image paths fixed)
 export const shivlings = [
   {
-    name: "Somnath",
-    price: "₹1000",
-    image: "/img-1.webp",
-  },
-  {
-    name: "Mallikarjuna",
+    name: "Natural Janeu Shivling",
     price: "₹1200",
     image: "/img-2.webp",
   },
   {
-    name: "Mahakaleshwar",
-    price: "₹1100",
-    image: "/img-3.webp",
-  },
-  {
-    name: "Omkareshwar",
+    name: "Multicolor Natural Shivling",
     price: "₹1300",
     image: "/img-4.webp",
   },
   {
-    name: "Kedarnath",
+    name: "Tilak Natural Shivling",
     price: "₹1150",
     image: "/img-5.webp",
   },
   {
-    name: "Bhimashankar",
+    name: "Full Set Shivling",
     price: "₹1250",
     image: "/img-6.webp",
   },
   {
-    name: "Kashi Vishwanath",
+    name: "Natural Akhand Shivling ",
     price: "₹1350",
     image: "/img-7.webp",
   },
-  {
-    name: "Trimbakeshwar",
-    price: "₹1400",
-    image: "/img-8.webp",
-  },
-  {
-    name: "Vaidyanath",
-    price: "₹1050",
-    image: "/img-9.webp",
-  },
-  {
-    name: "Nageshwar",
-    price: "₹950",
-    image: "/img-10.webp",
-  },
-  {
-    name: "Rameshwar",
-    price: "₹900",
-    image: "/img-11.webp",
-  },
-  {
-    name: "Grishneshwar",
-    price: "₹1100",
-    image: "/img-12.webp",
-  },
+  // {
+  //   name: "ArdhNareshwar",
+  //   price: "₹1400",
+  //   image: "/img-8.webp",
+  // },
+  // {
+  //   name: "Vaidyanath",
+  //   price: "₹1050",
+  //   image: "/img-9.webp",
+  // },
+  // {
+  //   name: "Nageshwar",
+  //   price: "₹950",
+  //   image: "/img-10.webp",
+  // },
+  // {
+  //   name: "Rameshwar",
+  //   price: "₹900",
+  //   image: "/img-11.webp",
+  // },
+  // {
+  //   name: "Grishneshwar",
+  //   price: "₹1100",
+  //   image: "/img-12.webp",
+  // },
 ];
 
 function JyotirlingaMarquee() {

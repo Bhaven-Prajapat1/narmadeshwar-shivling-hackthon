@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { lazy, Suspense, useEffect, useState } from "react";
 
-const Navbar = lazy(() => import("./components/NavBar"));
+const Navbar = lazy(() => import("../src/components/Navbar"));
 const LandingPage = lazy(() => import("./components/LandingPage"));
 const Gallery = lazy(() => import("./components/Gallery"));
 const JyotirlingaMarquee = lazy(() =>

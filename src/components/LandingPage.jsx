@@ -101,7 +101,7 @@ const LandingPage = () => {
               variants={paragraphVariants}
               className="flex flex-wrap gap-2 sm:gap-4 pt-2"
             >
-              {["Divine Energy", "Spiritual Healing", "Inner Peace", "Prosperity"].map((benefit, index) => (
+              {["Shivlings", "For Temple", "For Home","Explore"].map((benefit, index) => (
                 <motion.span
                   key={benefit}
                   initial={{ opacity: 0, scale: 0.8 }}

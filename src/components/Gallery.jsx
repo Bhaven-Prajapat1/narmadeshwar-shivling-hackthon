@@ -4,14 +4,16 @@ import { useEffect, useRef, useState } from "react";
 
 const images = [
   "/4 inch narmada shivling.webp",
+  "/img-8.webp",
   "/black marrble shivling.jpg",
+  "/complete set shivling.webp",
+  "/complete set shivling.webp",
   "/black narmada stone.webp",
-  "/complete set shivling.webp",
-  "/narmadeshwar shivling.webp",
-  "/imgi_173_narmada-shivling-1000x1000.jpg",
-  "/510+qaLmvKL.jpg",
   "/71dwtl0SH8L._SL1500_.jpg",
-  "/complete set shivling.webp",
+  "/multicolor.webp",
+  "/510+qaLmvKL.jpg",
+  "/imgi_173_narmada-shivling-1000x1000.jpg",
+  "/black-pure.webp",
 ];
 
 const Column = ({ images, y }) => {
@@ -122,6 +124,7 @@ const Gallery = () => {
           <Column images={[images[0], images[1], images[2]]} y={y} />
           <Column images={[images[3], images[4], images[5]]} y={y2} />
           <Column images={[images[6], images[7], images[8]]} y={y3} />
+          <Column images={[images[6], images[7], images[8]]} y={y3} />
         </div>
       </div>
 
@@ -133,7 +136,9 @@ const Gallery = () => {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">What Our Devotees Say</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
+          What Our Devotees Say
+        </h2>
         <div className="max-w-3xl mx-auto space-y-6">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -142,7 +147,8 @@ const Gallery = () => {
             viewport={{ once: true }}
             className="bg-gray-800 p-4 rounded-xl shadow-md"
           >
-            "I felt a divine energy the moment the Narmadeshwar Shivling arrived. Truly sacred."
+            "I felt a divine energy the moment the Narmadeshwar Shivling
+            arrived. Truly sacred."
           </motion.p>
 
           <motion.p
@@ -152,7 +158,8 @@ const Gallery = () => {
             viewport={{ once: true }}
             className="bg-gray-800 p-4 rounded-xl shadow-md"
           >
-            "Authentic and powerful. The packaging and energy was beyond expectations."
+            "Authentic and powerful. The packaging and energy was beyond
+            expectations."
           </motion.p>
 
           <motion.p
@@ -162,7 +169,8 @@ const Gallery = () => {
             viewport={{ once: true }}
             className="bg-gray-800 p-4 rounded-xl shadow-md"
           >
-            "Blessed to have this Shivling in my pooja room. A must for all Shiva bhakts."
+            "Blessed to have this Shivling in my pooja room. A must for all
+            Shiva bhakts."
           </motion.p>
         </div>
       </motion.div>

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Zap } from 'lucide-react';
+import { AnimatePresence, motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +10,7 @@ const Navbar = () => {
   useEffect(() => {
     const controlNavbar = () => {
       const currentScrollY = window.scrollY;
-      
+
       if (currentScrollY < 10) {
         // Always show navbar at the top
         setIsVisible(true);
@@ -22,21 +22,21 @@ const Navbar = () => {
         // Scrolling up - show navbar
         setIsVisible(true);
       }
-      
+
       setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener('scroll', controlNavbar);
-    return () => window.removeEventListener('scroll', controlNavbar);
+    window.addEventListener("scroll", controlNavbar);
+    return () => window.removeEventListener("scroll", controlNavbar);
   }, [lastScrollY]);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Product', href: '#product' },
-    { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' }
+    { name: "Home", href: "#home" },
+    { name: "Product", href: "#product" },
+    { name: "About", href: "#about" },
+    { name: "Contact", href: "#contact" },
   ];
 
   const menuVariants = {
@@ -46,58 +46,58 @@ const Navbar = () => {
       transition: {
         duration: 0.3,
         staggerChildren: 0.05,
-        staggerDirection: -1
-      }
+        staggerDirection: -1,
+      },
     },
     open: {
       opacity: 1,
-      height: 'auto',
+      height: "auto",
       transition: {
         duration: 0.3,
         staggerChildren: 0.1,
-        delayChildren: 0.1
-      }
-    }
+        delayChildren: 0.1,
+      },
+    },
   };
 
   const itemVariants = {
     closed: {
       opacity: 0,
       y: -20,
-      transition: { duration: 0.2 }
+      transition: { duration: 0.2 },
     },
     open: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.3 }
-    }
+      transition: { duration: 0.3 },
+    },
   };
 
   const logoVariants = {
     hover: {
       scale: 1.05,
       rotate: 180,
-      transition: { duration: 0.3 }
-    }
+      transition: { duration: 0.3 },
+    },
   };
 
   const linkVariants = {
     hover: {
       scale: 1.05,
-      color: '#3B82F6',
-      transition: { duration: 0.2 }
+      color: "#3B82F6",
+      transition: { duration: 0.2 },
     },
     tap: {
-      scale: 0.95
-    }
+      scale: 0.95,
+    },
   };
 
   return (
     <motion.nav
       initial={{ y: -100, opacity: 0 }}
-      animate={{ 
+      animate={{
         y: isVisible ? 0 : -100,
-        opacity: isVisible ? 1 : 0
+        opacity: isVisible ? 1 : 0,
       }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
       className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md shadow-lg border-b border-gray-900"
@@ -113,16 +113,14 @@ const Navbar = () => {
             <motion.div
               whileHover={{ rotate: 360 }}
               transition={{ duration: 0.6 }}
-              className="p-2 bg-gradient-to-br from-gray-500 to-indigo-900 rounded-full"
+              className="p-2 rounded-full"
             >
-              <img className='w-6 h-6 object-center object-cover' src="/nav-logo.webp" alt="" />
+              <img
+                className="w-12 h-12 object-center object-cover"
+                src="/public/spritual-img.png"
+                alt=""
+              />
             </motion.div>
-            <motion.span
-              className="text-xl font-bold bg-gradient-to-r from-gray-600 to-indigo-600 bg-clip-text text-transparent"
-              whileHover={{ scale: 1.02 }}
-            >
-              NARMADA
-            </motion.span>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -141,9 +139,7 @@ const Navbar = () => {
                   className="text-gray-300 hover:text-indigo-600 px-3 py-2 rounded-md text-md tracking-tight font-medium transition-colors duration-200 relative group"
                 >
                   {item.name}
-                  <motion.div
-                    className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-400 to-indigo-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
-                  />
+                  <motion.div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-400 to-indigo-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                 </motion.a>
               ))}
             </div>

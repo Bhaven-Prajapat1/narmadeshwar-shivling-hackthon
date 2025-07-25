@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+html{
+  scroll-behavior: smooth;
+}
+html,
+body {
+  height: 100%;
+  /* overflow: hidden; Locomotive handles scroll */
+}
+
+[data-scroll-container] {
+  min-height: 100vh;
+  height: auto;
+  overflow: hidden;
+}
+
+
+
